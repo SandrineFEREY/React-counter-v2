@@ -8,3 +8,35 @@
 button {
   margin: 20px;
 }
+
+.add-counter,
+.reset,
+p {
+  background-color: #5c48d3;
+  border-radius: 10px;
+  color: white;
+  border: none;
+}
+
+.add-counter {
+  height: 39px;
+  width: 206px;
+}
+
+p {
+  height: 80px;
+  width: 80px;
+  text-align: center;
+}
+
+.reset {
+  height: 39px;
+  width: 80px;
+}
+
+.block {
+  display: flex;
+}
+button {
+  border: none;
+}

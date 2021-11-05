@@ -1,5 +1,6 @@
 import "./App.css";
 import { useState } from "react";
+import Counter from "./components/Counter";
 
 function App() {
   const [counter, setCounter] = useState([0]);
@@ -7,6 +8,7 @@ function App() {
   return (
     <div className="container">
       <button
+        className="add-counter"
         onClick={() => {
           if (counter.length < 3) {
             const newCounter = [...counter];
@@ -20,40 +22,12 @@ function App() {
 
       {counter.map((elem, index) => {
         return (
-          <div>
-            <div>
-              <button
-                onClick={() => {
-                  const newCounter = [...counter];
-                  newCounter[index] = newCounter[index] - 1; //ou newCounter[index]--
-                  setCounter(newCounter);
-                }}
-              >
-                -
-              </button>
-
-              <span>{elem}</span>
-
-              <button
-                onClick={() => {
-                  const newCounter = [...counter];
-                  newCounter[index]++;
-                  setCounter(newCounter);
-                }}
-              >
-                +
-              </button>
-            </div>
-            <button
-              onClick={() => {
-                const newCounter = [...counter];
-                newCounter[index] = 0;
-                setCounter(newCounter);
-              }}
-            >
-              Reset
-            </button>
-          </div>
+          <Counter
+            counter={counter}
+            setCounter={setCounter}
+            index={index}
+            elem={elem}
+          />
         );
       })}
     </div>
